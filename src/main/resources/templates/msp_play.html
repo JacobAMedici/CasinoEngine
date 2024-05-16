@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout :: head}"></head>
+<body>
+<nav th:replace="~{layout :: navbar}"></nav>
+
+<div th:replace="~{msp :: msp}"></div>
+
+
+<br>
+<h3 class="text-center">Play MSP</h3>
+<br>
+<div class="center-container">
+    <div class="text-center" style="display: flex; gap: 23px">
+        <img th:src="${card1}" alt="Mississippi Stud Logo" width="74" height="109">
+        <img th:src="${card2}" alt="Mississippi Stud Logo" width="74" height="109">
+        <img th:src="${card3}" alt="Mississippi Stud Logo" width="74" height="109">
+        <img th:src="${card4}" alt="Mississippi Stud Logo" width="74" height="109">
+        <img th:src="${card5}" alt="Mississippi Stud Logo" width="74" height="109">
+    </div>
+</div>
+
+<div></div>
+
+
+<br>
+<footer th:replace="~{layout :: footer}"></footer>
+</body>
+</html>

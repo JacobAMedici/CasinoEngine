@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout :: head}"></head>
+<body>
+<nav th:replace="~{layout :: navbar}"></nav>
+
+
+<div class="text-center" th:fragment="msp">
+    <h1>Welcome to Mississippi Stud!</h1>
+    <button type="button" class="btn btn-secondary"><a class="nav-link" href="/MSP/Play"
+                                                       style="color: white; text-decoration: none;">Play MSP</a>
+    </button>
+    <button type="button" class="btn btn-secondary"><a class="nav-link" href="/MSP/Calc"
+                                                       style="color: white; text-decoration: none;">MSP Strategy
+        Calc</a></button>
+    <button type="button" class="btn btn-secondary"><a class="nav-link" href="/MSP/Sim"
+                                                       style="color: white; text-decoration: none;">Simulate MSP</a>
+    </button>
+    <br>
+</div>
+
+<div class="text-center">
+    <img src="/MSP%20Logo.avif" rel="icon" alt="Mississippi Stud Logo" width="600" height="600">
+</div>
+
+
+<footer th:replace="~{layout :: footer}"></footer>
+</body>
+</html>
