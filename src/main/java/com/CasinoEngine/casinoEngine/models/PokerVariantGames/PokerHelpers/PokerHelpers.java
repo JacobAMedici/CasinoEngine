@@ -253,7 +253,7 @@ public class PokerHelpers {
                     cardsTable[suit][1] &&
                     cardsTable[suit][2] &&
                     cardsTable[suit][3] &&
-                    cardsTable[suit][NUMBER_OF_RANKS - 2]
+                    cardsTable[suit][NUMBER_OF_RANKS - 1]
             ) {
                 return new Hand(HAND_TYPE.STRAIGHT_FLUSH,
                         new ArrayList<>(List.of(Deck.Card.RANK.FIVE)),
@@ -379,4 +379,31 @@ public class PokerHelpers {
         }
         return null;
     }
+
+
+    public boolean allSameSuit(List<Deck.Card> cards) {
+        // Map to count the number of cards in each suit
+        Map<Deck.Card.SUIT, Integer> suitCount = new HashMap<>();
+        for (Deck.Card.SUIT suit : Deck.Card.SUIT.values()) {
+            suitCount.put(suit, 0);
+        }
+
+        // Count the number of cards for each suit
+        for (Deck.Card card : cards) {
+            suitCount.put(card.suit, suitCount.get(card.suit) + 1);
+        }
+
+        // Check the number of suits with zero cards
+        int zeroCount = 0;
+
+        for (int count : suitCount.values()) {
+            if (count == 0) {
+                zeroCount++;
+            }
+        }
+
+        // Return true if exactly three suits have zero cards and one suit has four cards
+        return zeroCount == 3;
+    }
+
 }

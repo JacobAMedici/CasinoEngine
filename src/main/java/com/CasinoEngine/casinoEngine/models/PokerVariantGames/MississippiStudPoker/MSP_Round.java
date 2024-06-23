@@ -26,20 +26,60 @@ public class MSP_Round {
     private int numberOfLosers = 0;
 
     public static void main(String[] ignored) throws RequestFailedException {
-        // play(800);
-        // autoPlay(800, 15);
-//        playAll();
+        /*
+        MSP_Round game = new MSP_Round();
+        int totalBets = 0;
+        int numberOfHands = 100_000;
+
+        for (int handCount = 1; handCount <= numberOfHands; handCount++) {
+            totalBets += game.simulateAll();
+            System.out.println("Hand number: " + handCount);
+            System.out.println("Current average bet: " + (double) totalBets / handCount);
+        }
+
+        // Print the final average bet after all hands
+        System.out.println("Final average bet per hand: " + (double) totalBets / numberOfHands);
+        */
+    }
+
+    private int simulateAll() throws RequestFailedException {
+        final int ANTE = 1;
+        int bet = ANTE;
+        MSP_Helpers mspHelpers = new MSP_Helpers();
+        Deck deck = new Deck();
+
+        // Deal the first two cards
+        Deck.Card firstCard = deck.getCard();
+        Deck.Card secondCard = deck.getCard();
+        List<Deck.Card> playingCards = new ArrayList<>(List.of(firstCard, secondCard));
+
+        // Calculate the bet based on the first two cards
+        bet += mspHelpers.solveHand(playingCards, ANTE, bet);
+
+        // Deal the third card and update the bet
+        Deck.Card thirdCard = deck.getCard();
+        playingCards.add(thirdCard);
+        bet += mspHelpers.solveHand(playingCards, ANTE, bet);
+
+        // Deal the fourth card and update the bet
+        Deck.Card fourthCard = deck.getCard();
+        playingCards.add(fourthCard);
+        bet += mspHelpers.solveHand(playingCards, ANTE, bet);
+
+        return bet;
     }
 
     private static void playAll() throws RequestFailedException {
         MSP_Helpers mspHelpers = new MSP_Helpers();
         Deck deck = new Deck();
         List<Deck.Card> cards = deck.getDeck();
-        int totalExpectedBets = 0;
+        double totalExpectedBets = 0;
         int count = 0;
+        List<Deck.Card> usedCards = new ArrayList<>(5);
         for (Deck.Card firstCard : cards) {
+            usedCards.add(firstCard);
             for (Deck.Card secondCard : cards) {
-                if (!firstCard.equals(secondCard)) {
+                if (!usedCards.contains(secondCard)) {
                     double expectedBet = 1;
                     int handMultiplierOne = mspHelpers.solveHand(List.of(firstCard, secondCard), 1, 1);
                     expectedBet += handMultiplierOne;
@@ -55,6 +95,7 @@ public class MSP_Round {
                             }
                         }
                     }
+                    totalExpectedBets += expectedBet / ((double) (cards.size() * (cards.size() - 1)) /2);
                 }
                 System.out.println(count++);
             }

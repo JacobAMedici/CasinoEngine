@@ -4,7 +4,9 @@ import com.CasinoEngine.casinoEngine.models.AllHelpers.Deck;
 import com.CasinoEngine.casinoEngine.models.AllHelpers.RequestFailedException;
 import com.CasinoEngine.casinoEngine.models.PokerVariantGames.PokerHelpers.PokerHelpers;
 
-import java.io.*;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -14,11 +16,13 @@ import static com.CasinoEngine.casinoEngine.models.AllHelpers.Deck.Card.rankToNu
 
 public class MSP_Helpers {
 
-    public static void main (String[] ignored) throws RequestFailedException {
+    public static void main(String[] ignored) throws RequestFailedException {
         MSP_Helpers msp_helpers = new MSP_Helpers();
-        System.out.println(msp_helpers.solveHand(new ArrayList<>(List.of(new Deck.Card(Deck.Card.RANK.ACE, Deck.Card.SUIT.HEARTS),
-                new Deck.Card(Deck.Card.RANK.TWO, Deck.Card.SUIT.CLUBS),
-                new Deck.Card(Deck.Card.RANK.FOUR, Deck.Card.SUIT.SPADES))), 1, 2));
+//        System.out.println(msp_helpers.solveHand(new ArrayList<>(List.of(new Deck.Card(Deck.Card.RANK.ACE, Deck.Card.SUIT.HEARTS),
+//                new Deck.Card(Deck.Card.RANK.TWO, Deck.Card.SUIT.CLUBS),
+//                new Deck.Card(Deck.Card.RANK.FOUR, Deck.Card.SUIT.SPADES))), 1, 2));
+
+        msp_helpers.houseEdge();
 
     }
 
@@ -31,6 +35,11 @@ public class MSP_Helpers {
     private final List<Deck.Card> masterDeck = new Deck().getDeck();
 
     PokerHelpers pokerHelpers = new PokerHelpers();
+
+//    private int completedStraightFlushPermutations = 0;
+//    private int totalStraightFlushWager = 0;
+
+    private final double JACKPOT = 25330;
 
     public static Map<PokerHelpers.HAND_TYPE, Integer> payouts = Map.ofEntries(
             // Notice there is one additional payout per bonus which is used to return the wager
@@ -68,6 +77,14 @@ public class MSP_Helpers {
 
         return evaluateCards(cards, ante, amountWagered);
     }
+
+//    public int solveHand(List<Deck.Card> cards, int ante, int amountWagered) throws RequestFailedException {
+//        if (cards.size() > 4 || cards.size() < 2) {
+//            return -1;
+//        }
+//
+//        return evaluateCards(cards, ante, amountWagered);
+//    }
 
     private int evaluateCards(List<Deck.Card> cards, int ante, int amountWagered) throws RequestFailedException {
 
@@ -124,7 +141,18 @@ public class MSP_Helpers {
             if (!cards.contains(card)) {
                 cards.add(card);
                 PokerHelpers.Hand hand = pokerHelpers.findBestFiveCardHand(cards, List.of());
+//                if (hand.handStrength == PokerHelpers.HAND_TYPE.STRAIGHT_FLUSH) {
+//                    completedStraightFlushPermutations++;
+//                    totalStraightFlushWager += amountWagered;
+//                }
                 double newEV = determinePayout(hand, amountWagered) - amountWagered;
+//                if (hand.handStrength == PokerHelpers.HAND_TYPE.ROYAL_FLUSH) {
+//                    newEV = JACKPOT;
+//                } else if (hand.handStrength == PokerHelpers.HAND_TYPE.STRAIGHT_FLUSH) {
+//                    newEV = (JACKPOT / 10);
+//                } else {
+//                    newEV = determinePayout(hand, amountWagered) - amountWagered;
+//                }
                 totalEV += newEV * divByFactor;
                 cards.remove(card);
             }
@@ -170,22 +198,23 @@ public class MSP_Helpers {
         return movesCache.getOrDefault(key, -1); // Return -1 or some error code if no move is found
     }
 
-    /*
     private void houseEdge() {
         double totalEV = 0;
         int count = 0;
+        List<Deck.Card> usedFirstCards = new ArrayList<>();
         for (Deck.Card firstCard : masterDeck) {
+            usedFirstCards.add(firstCard);
             for (Deck.Card secondCard : masterDeck) {
-                if (!firstCard.equals(secondCard)) {
+                if (!usedFirstCards.contains(secondCard)) {
                     try {
                         int handChoice = solveHand(new ArrayList<>(List.of(firstCard, secondCard)), 1, 1);
                         double newEV = getEV(new ArrayList<>(List.of(firstCard, secondCard)), 1, 1 + handChoice);
                         if (handChoice == 0) {
                             totalEV -= 1;
-                            System.out.println("Hand Number: " +  count++ + " Cards: " + firstCard + ", " + secondCard + " EV: " + -1);
+                            System.out.println("Hand Number: " + count++ + " Cards: " + firstCard + ", " + secondCard + " EV: " + -1);
                         } else {
                             totalEV += newEV;
-                            System.out.println("Hand Number: " +  count++ + " Cards: " + firstCard + ", " + secondCard + " EV: " + newEV);
+                            System.out.println("Hand Number: " + count++ + " Cards: " + firstCard + ", " + secondCard + " EV: " + newEV);
                         }
                     } catch (RequestFailedException e) {
                         System.out.println(e.getMessage());
@@ -193,10 +222,11 @@ public class MSP_Helpers {
                 }
             }
         }
-        System.out.println("House Edge: " + -totalEV / (cardsInDeck * (cardsInDeck - 1)));
-    }
-    */
+        double defaultHouseEdge = -totalEV / ((double) (cardsInDeck * (cardsInDeck - 1)) / 2);
 
-    // Calculated House Edge: 0.04914858250992733 or 4.914858250992733%
+    }
+
+// Calculated House Edge: 0.04914858250992733 or 4.914858250992733%
+
 
 }

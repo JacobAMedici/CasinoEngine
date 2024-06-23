@@ -77,7 +77,7 @@ public class BJ_Helpers {
         // Find max EV
         double maxValue = Collections.max(Arrays.asList(hitEV, standEV, doubleEV, splitEV, surrenderEV));
 
-        // Return move with highest EV
+        // Return move with the highest EV
         if (maxValue == hitEV) {
             return MOVE.HIT;
         } else if (maxValue == standEV) {
@@ -113,7 +113,7 @@ public class BJ_Helpers {
         double ev = 0;
         int playerValue = getHandValue(playerCards);
         for (Deck.Card card : playerCards) {
-
+            continue;
         }
         return 0;
     }

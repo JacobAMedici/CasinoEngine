@@ -7,8 +7,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class PokerHelpersTest {
 
@@ -136,6 +135,20 @@ class PokerHelpersTest {
         assertTrue(lowStraightFlush.compareTo(baseStraightFlushHand) < 0);
         // Compare high to low
         assertTrue(baseStraightFlushHand.compareTo(lowStraightFlush) > 0);
+
+        // King, Two, Three, Four, Five
+        PokerHelpers.Hand kingToFive = pokerHelpers.findBestFiveCardHand(
+                List.of(
+                        new Deck.Card(Deck.Card.RANK.KING, Deck.Card.SUIT.DIAMONDS),
+                        new Deck.Card(Deck.Card.RANK.TWO, Deck.Card.SUIT.DIAMONDS)),
+                List.of(
+                        new Deck.Card(Deck.Card.RANK.THREE, Deck.Card.SUIT.DIAMONDS),
+                        new Deck.Card(Deck.Card.RANK.FOUR, Deck.Card.SUIT.DIAMONDS),
+                        new Deck.Card(Deck.Card.RANK.FIVE, Deck.Card.SUIT.DIAMONDS))
+        );
+
+        // Compare kingToFive
+        assertNotEquals(kingToFive.handStrength, PokerHelpers.HAND_TYPE.STRAIGHT_FLUSH);
     }
 
     @Test
@@ -572,4 +585,53 @@ class PokerHelpersTest {
         assertTrue(twoThroughSix.compareTo(threeThroughSeven) < 0);
 
     }
+
+    @Test
+    public void testAllSameSuit() {
+        // Flush Draw
+        assertTrue(pokerHelpers.allSameSuit(
+                List.of(
+                        new Deck.Card(Deck.Card.RANK.ACE, Deck.Card.SUIT.HEARTS),
+                        new Deck.Card(Deck.Card.RANK.QUEEN, Deck.Card.SUIT.HEARTS),
+                        new Deck.Card(Deck.Card.RANK.KING, Deck.Card.SUIT.HEARTS),
+                        new Deck.Card(Deck.Card.RANK.JACK, Deck.Card.SUIT.HEARTS)
+                )
+        ));
+
+        // Not all same suit
+        assertFalse(pokerHelpers.allSameSuit(
+                List.of(
+                        new Deck.Card(Deck.Card.RANK.ACE, Deck.Card.SUIT.HEARTS),
+                        new Deck.Card(Deck.Card.RANK.QUEEN, Deck.Card.SUIT.HEARTS),
+                        new Deck.Card(Deck.Card.RANK.KING, Deck.Card.SUIT.HEARTS),
+                        new Deck.Card(Deck.Card.RANK.JACK, Deck.Card.SUIT.SPADES)
+                )
+        ));
+
+        // Three of same suit
+        assertTrue(pokerHelpers.allSameSuit(
+                List.of(
+                        new Deck.Card(Deck.Card.RANK.ACE, Deck.Card.SUIT.HEARTS),
+                        new Deck.Card(Deck.Card.RANK.QUEEN, Deck.Card.SUIT.HEARTS),
+                        new Deck.Card(Deck.Card.RANK.KING, Deck.Card.SUIT.HEARTS)
+                )
+        ));
+
+        // Two of same suit
+        assertTrue(pokerHelpers.allSameSuit(
+                List.of(
+                        new Deck.Card(Deck.Card.RANK.ACE, Deck.Card.SUIT.HEARTS),
+                        new Deck.Card(Deck.Card.RANK.QUEEN, Deck.Card.SUIT.HEARTS)
+                )
+        ));
+
+        // Two of same suit
+        assertFalse(pokerHelpers.allSameSuit(
+                List.of(
+                        new Deck.Card(Deck.Card.RANK.ACE, Deck.Card.SUIT.HEARTS),
+                        new Deck.Card(Deck.Card.RANK.QUEEN, Deck.Card.SUIT.SPADES)
+                )
+        ));
+    }
+
 }

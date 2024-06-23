@@ -93,6 +93,7 @@ public class Deck {
         return cardDeck;
     }
 
+
     public LinkedList<Card> getDeck() {
         return cards;
     }
@@ -124,5 +125,13 @@ public class Deck {
             cards.addAll(fillOneDeck());
         }
         return cards;
+    }
+
+    public List<Deck.Card> getRankOnlyDeck() {
+        List<Deck.Card> rankOnlyDeck = new ArrayList<>();
+        for (Deck.Card.RANK rank : Deck.Card.RANK.values()) {
+            rankOnlyDeck.add(new Deck.Card(rank, Deck.Card.SUIT.SPADES));
+        }
+        return rankOnlyDeck;
     }
 }
