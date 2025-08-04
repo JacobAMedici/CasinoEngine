@@ -1,0 +1,75 @@
+package model.games.twentyOne.blackjack;
+
+import model.cards.Card;
+import model.cards.SuitlessCard;
+
+/**
+ * Represents the expected value (EV) of standing in a game of Blackjack.
+ */
+public class StandEV {
+
+  Rules rules;
+  int totalNumOfCards;
+
+  /**
+   * Constructs a StandEV instance based on the given Blackjack rules.
+   *
+   * @param rules the set of Blackjack rules to use for EV calculations
+   */
+  public StandEV(Rules rules) {
+    this.rules = rules;
+    int CARDS_IN_DECK = 52;
+    this.totalNumOfCards = rules.getNumberOfDecks() * CARDS_IN_DECK;
+  }
+
+  private Double standEV(BlackjackDealerHand dealerHand,
+                         BlackjackPlayerHand playerHand,
+                         int handIndex) {
+    // What this does, is it considers if the dealer had checked for blackjack and normalizes
+    // splits and doubles for the entire thing to just lose one single bet
+    if (dealerHand.isBlackjack()
+        && rules.getHoleCardRule() == Rules.HOLE_CARD_RULE.AMERICAN_STYLE) {
+      if (playerHand.isBlackjack(handIndex)) {
+        return 0.0;
+      }
+      int totalNumberOfBets = 1 + playerHand.getSplitCount() + playerHand.getDoubleCount();
+      return -1.0 / totalNumberOfBets;
+    }
+
+    // Check if player has Blackjack
+    if (playerHand.isBlackjack(handIndex) && playerHand.getSplitCount() == 0) {
+      return rules.getBlackjackPayout().doubleValue();
+    }
+
+    boolean dealerShouldStand = switch (rules.getStandRule()) {
+      case STAND_ON_SOFT_17 -> dealerHand.getHandSum() >= 17;
+      case HIT_SOFT_17 -> dealerHand.getHandSum() > 17
+          || ((dealerHand.getHandSum() == 17 && !dealerHand.isSoft()));
+    };
+
+    if (dealerShouldStand) {
+      int playerTotal = playerHand.getHandSum(handIndex);
+      int dealerTotal = dealerHand.getHandSum();
+
+      if (playerTotal > 21) return -1.0;
+      if (dealerTotal > 21) return 1.0;
+      return switch (Integer.compare(playerTotal, dealerTotal)) {
+        case 1 -> 1.0;   // player wins
+        case -1 -> -1.0; // player loses
+        case 0 -> 0.0;   // push
+        default -> throw new IllegalStateException("Unexpected comparison result");
+      };
+    } else {
+      double standEV = 0.0;
+      BasicStrategy basicStrategy = new BasicStrategy(rules);
+      for (Card.RANK rank : Card.RANK.values()) {
+        double probability = basicStrategy.getCardProbability(dealerHand, playerHand, handIndex, rank);
+        BlackjackDealerHand newDealerHand = new BlackjackDealerHand(dealerHand);
+        newDealerHand.hit(new SuitlessCard(rank));
+        standEV += probability * standEV(newDealerHand, playerHand, handIndex);
+      }
+
+      return standEV;
+    }
+  }
+}
