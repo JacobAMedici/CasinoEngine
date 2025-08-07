@@ -1,9 +1,7 @@
 package model.blackjackTests;
 
-import model.blackjack.*;
 import model.cards.Card;
 import model.cards.SuitlessCard;
-import model.games.blackjack.*;
 import model.games.twentyOne.blackjack.*;
 import org.junit.Test;
 

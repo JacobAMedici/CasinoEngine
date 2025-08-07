@@ -1,0 +1,323 @@
+Cut off percentage: 50
+   0 TC has EV  -0.033935 with frequency 0.689672
+   1 TC has EV  -0.035231 with frequency 0.121703
+   2 TC has EV  -0.034225 with frequency 0.072844
+   3 TC has EV  -0.032174 with frequency 0.045397
+   4 TC has EV  -0.029373 with frequency 0.029468
+   5 TC has EV  -0.023880 with frequency 0.018149
+   6 TC has EV  -0.018235 with frequency 0.009910
+   7 TC has EV  -0.013497 with frequency 0.006211
+   8 TC has EV  -0.006571 with frequency 0.003282
+   9 TC has EV   0.004162 with frequency 0.001641
+  10 TC has EV   0.017137 with frequency 0.000915
+  11 TC has EV   0.018031 with frequency 0.000415
+  12 TC has EV   0.035199 with frequency 0.000216
+  13 TC has EV   0.048865 with frequency 0.000117
+  14 TC has EV   0.062930 with frequency 0.000039
+  15 TC has EV   0.077444 with frequency 0.000014
+  16 TC has EV   0.085682 with frequency 0.000005
+  17 TC has EV   0.171028 with frequency 0.000002
+  18 TC has EV   0.082308 with frequency 0.000001
+  19 TC has EV   0.090047 with frequency 0.000000
+  20 TC has EV   0.328244 with frequency 0.000000
+  21 TC has EV   0.944444 with frequency 0.000000
+  22 TC has EV   0.933333 with frequency 0.000000
+  23 TC has EV  -1.000000 with frequency 0.000000
+  24 TC has EV   0.000000 with frequency 0.000000
+  25 TC has EV   0.000000 with frequency 0.000000
+
+  Units won per hand (2 deck)  0.000048
+  Units won per hand played (2 deck)  0.014193
+  Total hands played: 1800000000
+  Positive hands played: 6056889
+  Percentage of hands played: 0.336494%
+
+  -----------------------------------------------
+
+Cut off percentage: 45
+   0 TC has EV  -0.033840 with frequency 0.675175
+   1 TC has EV  -0.035504 with frequency 0.118174
+   2 TC has EV  -0.035518 with frequency 0.073593
+   3 TC has EV  -0.032702 with frequency 0.047960
+   4 TC has EV  -0.029721 with frequency 0.032509
+   5 TC has EV  -0.025398 with frequency 0.021126
+   6 TC has EV  -0.021439 with frequency 0.012569
+   7 TC has EV  -0.014366 with frequency 0.008235
+   8 TC has EV  -0.008520 with frequency 0.004776
+   9 TC has EV   0.003394 with frequency 0.002666
+  10 TC has EV   0.010641 with frequency 0.001198
+  11 TC has EV   0.016302 with frequency 0.000960
+  12 TC has EV   0.026975 with frequency 0.000533
+  13 TC has EV   0.035502 with frequency 0.000290
+  14 TC has EV   0.062894 with frequency 0.000131
+  15 TC has EV   0.056173 with frequency 0.000060
+  16 TC has EV   0.075622 with frequency 0.000027
+  17 TC has EV   0.072833 with frequency 0.000012
+  18 TC has EV   0.058699 with frequency 0.000005
+  19 TC has EV   0.063563 with frequency 0.000002
+  20 TC has EV  -0.174713 with frequency 0.000000
+  21 TC has EV   0.164195 with frequency 0.000000
+  22 TC has EV   0.298246 with frequency 0.000000
+  23 TC has EV   0.153226 with frequency 0.000000
+  24 TC has EV   0.153846 with frequency 0.000000
+  25 TC has EV   0.153846 with frequency 0.000000
+
+  Units won per hand (2 deck)  0.000077
+  Units won per hand played (2 deck)  0.013110
+  Total hands played: 2000000000
+  Positive hands played: 11766257
+  Percentage of hands played: 0.588313%
+
+  -----------------------------------------------
+
+Cut off percentage: 40
+   0 TC has EV  -0.033874 with frequency 0.668898
+   1 TC has EV  -0.035811 with frequency 0.116717
+   2 TC has EV  -0.035310 with frequency 0.073958
+   3 TC has EV  -0.034164 with frequency 0.049093
+   4 TC has EV  -0.031212 with frequency 0.033825
+   5 TC has EV  -0.026931 with frequency 0.022409
+   6 TC has EV  -0.021341 with frequency 0.011970
+   7 TC has EV  -0.015567 with frequency 0.009570
+   8 TC has EV  -0.009154 with frequency 0.005793
+   9 TC has EV   0.000752 with frequency 0.003392
+  10 TC has EV   0.011559 with frequency 0.001694
+  11 TC has EV   0.021433 with frequency 0.001253
+  12 TC has EV   0.030137 with frequency 0.000508
+  13 TC has EV   0.042243 with frequency 0.000475
+  14 TC has EV   0.048031 with frequency 0.000234
+  15 TC has EV   0.062944 with frequency 0.000115
+  16 TC has EV   0.084536 with frequency 0.000054
+  17 TC has EV   0.118730 with frequency 0.000024
+  18 TC has EV   0.119780 with frequency 0.000010
+  19 TC has EV   0.129799 with frequency 0.000002
+  20 TC has EV   0.163878 with frequency 0.000003
+  21 TC has EV   0.108225 with frequency 0.000001
+  22 TC has EV   0.221352 with frequency 0.000000
+  23 TC has EV   0.309309 with frequency 0.000000
+  24 TC has EV   0.146789 with frequency 0.000000
+  25 TC has EV   0.700000 with frequency 0.000000
+
+  Units won per hand (2 deck)  0.000113
+  Units won per hand played (2 deck)  0.014485
+  Total hands played: 2100000000
+  Positive hands played: 16310223
+  Percentage of hands played: 0.776677%
+
+  -----------------------------------------------
+
+Cut off percentage: 35
+   0 TC has EV  -0.033919 with frequency 0.658232
+   1 TC has EV  -0.036931 with frequency 0.114279
+   2 TC has EV  -0.036305 with frequency 0.074659
+   3 TC has EV  -0.034203 with frequency 0.047939
+   4 TC has EV  -0.031070 with frequency 0.034026
+   5 TC has EV  -0.028302 with frequency 0.025684
+   6 TC has EV  -0.022453 with frequency 0.015073
+   7 TC has EV  -0.016861 with frequency 0.010303
+   8 TC has EV  -0.011186 with frequency 0.007947
+   9 TC has EV  -0.001374 with frequency 0.004187
+  10 TC has EV   0.007471 with frequency 0.003031
+  11 TC has EV   0.014158 with frequency 0.001630
+  12 TC has EV   0.027553 with frequency 0.001223
+  13 TC has EV   0.045054 with frequency 0.000881
+  14 TC has EV   0.049353 with frequency 0.000214
+  15 TC has EV   0.068693 with frequency 0.000354
+  16 TC has EV   0.077445 with frequency 0.000181
+  17 TC has EV   0.096213 with frequency 0.000088
+  18 TC has EV   0.108759 with frequency 0.000009
+  19 TC has EV   0.114562 with frequency 0.000032
+  20 TC has EV   0.154309 with frequency 0.000016
+  21 TC has EV   0.167245 with frequency 0.000007
+  22 TC has EV   0.324708 with frequency 0.000001
+  23 TC has EV   0.231127 with frequency 0.000002
+  24 TC has EV   0.272870 with frequency 0.000001
+  25 TC has EV   0.121711 with frequency 0.000000
+
+  Units won per hand (2 deck)  0.000186
+  Units won per hand played (2 deck)  0.024235
+  Total hands played: 2300000000
+  Positive hands played: 17644130
+  Percentage of hands played: 0.767136%
+
+  -----------------------------------------------
+
+Cut off percentage: 30
+   0 TC has EV  -0.034108 with frequency 0.649347
+   1 TC has EV  -0.037731 with frequency 0.112513
+   2 TC has EV  -0.037181 with frequency 0.072048
+   3 TC has EV  -0.035644 with frequency 0.047522
+   4 TC has EV  -0.033715 with frequency 0.037192
+   5 TC has EV  -0.029193 with frequency 0.026050
+   6 TC has EV  -0.024240 with frequency 0.016282
+   7 TC has EV  -0.019130 with frequency 0.011362
+   8 TC has EV  -0.012918 with frequency 0.010572
+   9 TC has EV  -0.004343 with frequency 0.005214
+  10 TC has EV   0.003761 with frequency 0.003764
+  11 TC has EV   0.015261 with frequency 0.003080
+  12 TC has EV   0.030542 with frequency 0.001126
+  13 TC has EV   0.034943 with frequency 0.001815
+  14 TC has EV   0.051536 with frequency 0.000797
+  15 TC has EV   0.068137 with frequency 0.000326
+  16 TC has EV   0.076501 with frequency 0.000506
+  17 TC has EV   0.106089 with frequency 0.000260
+  18 TC has EV   0.162261 with frequency 0.000009
+  19 TC has EV   0.123323 with frequency 0.000119
+  20 TC has EV   0.149266 with frequency 0.000030
+  21 TC has EV   0.175217 with frequency 0.000033
+  22 TC has EV   0.171442 with frequency 0.000019
+  23 TC has EV   0.190366 with frequency 0.000004
+  24 TC has EV   0.278283 with frequency 0.000006
+  25 TC has EV   0.272978 with frequency 0.000005
+
+  Units won per hand (2 deck)  0.000322
+  Units won per hand played (2 deck)  0.027040
+  Total hands played: 2500000000
+  Positive hands played: 29747268
+  Percentage of hands played: 1.189891%
+
+  -----------------------------------------------
+
+Cut off percentage: 25
+   0 TC has EV  -0.034008 with frequency 0.658236
+   1 TC has EV  -0.036950 with frequency 0.114286
+   2 TC has EV  -0.036201 with frequency 0.074671
+   3 TC has EV  -0.034448 with frequency 0.047932
+   4 TC has EV  -0.031011 with frequency 0.034027
+   5 TC has EV  -0.027530 with frequency 0.025680
+   6 TC has EV  -0.022738 with frequency 0.015063
+   7 TC has EV  -0.016102 with frequency 0.010300
+   8 TC has EV  -0.011430 with frequency 0.007946
+   9 TC has EV  -0.002384 with frequency 0.004186
+  10 TC has EV   0.008029 with frequency 0.003032
+  11 TC has EV   0.019513 with frequency 0.001632
+  12 TC has EV   0.025535 with frequency 0.001223
+  13 TC has EV   0.043812 with frequency 0.000883
+  14 TC has EV   0.051681 with frequency 0.000214
+  15 TC has EV   0.061411 with frequency 0.000355
+  16 TC has EV   0.085056 with frequency 0.000181
+  17 TC has EV   0.109859 with frequency 0.000087
+  18 TC has EV   0.157072 with frequency 0.000009
+  19 TC has EV   0.113012 with frequency 0.000032
+  20 TC has EV   0.152082 with frequency 0.000016
+  21 TC has EV   0.141288 with frequency 0.000007
+  22 TC has EV   0.257154 with frequency 0.000001
+  23 TC has EV   0.162133 with frequency 0.000002
+  24 TC has EV   0.296035 with frequency 0.000001
+  25 TC has EV   0.217989 with frequency 0.000000
+
+  Units won per hand (2 deck)  0.000193
+  Units won per hand played (2 deck)  0.025182
+  Total hands played: 2300000000
+  Positive hands played: 17653809
+  Percentage of hands played: 0.767557%
+
+  -----------------------------------------------
+
+Cut off percentage: 20
+   0 TC has EV  -0.034195 with frequency 0.638811
+   1 TC has EV  -0.038588 with frequency 0.103867
+   2 TC has EV  -0.039547 with frequency 0.071529
+   3 TC has EV  -0.036462 with frequency 0.045553
+   4 TC has EV  -0.037161 with frequency 0.039708
+   5 TC has EV  -0.030552 with frequency 0.025936
+   6 TC has EV  -0.030258 with frequency 0.020027
+   7 TC has EV  -0.020993 with frequency 0.012310
+   8 TC has EV  -0.017514 with frequency 0.013255
+   9 TC has EV  -0.011975 with frequency 0.006817
+  10 TC has EV  -0.002789 with frequency 0.006153
+  11 TC has EV   0.007190 with frequency 0.004319
+  12 TC has EV   0.017053 with frequency 0.002924
+  13 TC has EV   0.029978 with frequency 0.002682
+  14 TC has EV   0.044864 with frequency 0.001945
+  15 TC has EV   0.054828 with frequency 0.000957
+  16 TC has EV   0.068127 with frequency 0.001192
+  17 TC has EV   0.103623 with frequency 0.000394
+  18 TC has EV   0.093374 with frequency 0.000647
+  19 TC has EV   0.129959 with frequency 0.000189
+  20 TC has EV   0.134292 with frequency 0.000367
+  21 TC has EV   0.160107 with frequency 0.000069
+  22 TC has EV   0.175025 with frequency 0.000184
+  23 TC has EV   0.192632 with frequency 0.000021
+  24 TC has EV   0.220513 with frequency 0.000080
+  25 TC has EV   0.310391 with frequency 0.000064
+
+  Units won per hand (2 deck)  0.000642
+  Units won per hand played (2 deck)  0.040058
+  Total hands played: 2800000000
+  Positive hands played: 44896245
+  Percentage of hands played: 1.603437%
+
+  -----------------------------------------------
+
+Cut off percentage: 15
+   0 TC has EV  -0.034307 with frequency 0.633381
+   1 TC has EV  -0.038418 with frequency 0.096943
+   2 TC has EV  -0.041194 with frequency 0.070330
+   3 TC has EV  -0.039715 with frequency 0.046308
+   4 TC has EV  -0.037522 with frequency 0.037064
+   5 TC has EV  -0.034087 with frequency 0.027404
+   6 TC has EV  -0.035541 with frequency 0.022031
+   7 TC has EV  -0.025596 with frequency 0.014128
+   8 TC has EV  -0.017061 with frequency 0.012376
+   9 TC has EV  -0.020180 with frequency 0.009034
+  10 TC has EV  -0.007063 with frequency 0.007743
+  11 TC has EV   0.007368 with frequency 0.004031
+  12 TC has EV   0.004649 with frequency 0.004692
+  13 TC has EV   0.021572 with frequency 0.003909
+  14 TC has EV   0.041077 with frequency 0.001816
+  15 TC has EV   0.039737 with frequency 0.003116
+  16 TC has EV   0.069885 with frequency 0.001112
+  17 TC has EV   0.102613 with frequency 0.000368
+  18 TC has EV   0.086996 with frequency 0.001944
+  19 TC has EV   0.134499 with frequency 0.000177
+  20 TC has EV   0.134687 with frequency 0.000636
+  21 TC has EV   0.146276 with frequency 0.000506
+  22 TC has EV   0.179919 with frequency 0.000171
+  23 TC has EV   0.193639 with frequency 0.000166
+  24 TC has EV   0.212414 with frequency 0.000294
+  25 TC has EV   0.317362 with frequency 0.000322
+
+  Units won per hand (2 deck)  0.001030
+  Units won per hand played (2 deck)  0.044278
+  Total hands played: 3000000000
+  Positive hands played: 69775706
+  Percentage of hands played: 2.325857%
+
+  -----------------------------------------------
+
+Cut off percentage: 10
+   0 TC has EV  -0.034814 with frequency 0.629262
+   1 TC has EV  -0.038352 with frequency 0.090890
+   2 TC has EV  -0.041240 with frequency 0.065941
+   3 TC has EV  -0.043902 with frequency 0.047229
+   4 TC has EV  -0.044564 with frequency 0.038911
+   5 TC has EV  -0.034186 with frequency 0.025688
+   6 TC has EV  -0.035352 with frequency 0.020644
+   7 TC has EV  -0.034206 with frequency 0.016520
+   8 TC has EV  -0.016756 with frequency 0.011603
+   9 TC has EV  -0.037170 with frequency 0.011936
+  10 TC has EV  -0.007066 with frequency 0.007267
+  11 TC has EV  -0.010382 with frequency 0.006320
+  12 TC has EV   0.005855 with frequency 0.004400
+  13 TC has EV   0.020360 with frequency 0.003665
+  14 TC has EV   0.006804 with frequency 0.006009
+  15 TC has EV   0.041247 with frequency 0.002923
+  16 TC has EV   0.066424 with frequency 0.001044
+  17 TC has EV   0.099753 with frequency 0.000345
+  18 TC has EV   0.072948 with frequency 0.004556
+  19 TC has EV   0.126141 with frequency 0.000166
+  20 TC has EV   0.135854 with frequency 0.000597
+  21 TC has EV   0.147473 with frequency 0.000475
+  22 TC has EV   0.152259 with frequency 0.000775
+  23 TC has EV   0.165991 with frequency 0.001066
+  24 TC has EV   0.217783 with frequency 0.000276
+  25 TC has EV   0.338749 with frequency 0.001494
+
+  Units won per hand (2 deck)  0.001731
+  Units won per hand played (2 deck)  0.062292
+  Total hands played: 3200000000
+  Positive hands played: 88928974
+  Percentage of hands played: 2.779030%
+
+  -----------------------------------------------

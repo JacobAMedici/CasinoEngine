@@ -51,4 +51,11 @@ public interface Deck<T extends Card> {
    * @return the true count as an integer (rounded if necessary)
    */
   int getTrueCount();
+
+  /**
+   * Removes the specified cards from the deck.
+   *
+   * @param cardsToRemove the list of cards to remove
+   */
+  void removeCardsFromDeck(List<T> cardsToRemove);
 }

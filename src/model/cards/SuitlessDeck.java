@@ -9,16 +9,16 @@ import java.util.List;
  * <p>This deck uses cards without suits, with four copies of each rank per deck,
  * and supports shuffling and multi-deck games.</p>
  */
-public class SuitlessDeck extends GameDeck {
+public class SuitlessDeck extends GameDeck<SuitlessCard> {
 
   /**
    * Constructs a BlackjackDeck containing one full set of cards (4 cards of each rank).
    * Automatically shuffles the deck upon creation.
    */
   public SuitlessDeck() {
-    List<Card> cards = fillOneDeck();
+    List<SuitlessCard> cards = fillOneDeck();
     super(cards);
-    shuffle();
+    super.shuffle();
   }
 
   /**
@@ -28,28 +28,13 @@ public class SuitlessDeck extends GameDeck {
    * @param numberOfDecks the number of standard decks to include
    */
   public SuitlessDeck(int numberOfDecks) {
-    List<Card> cards = fillNDecks(numberOfDecks);
+    List<SuitlessCard> cards = fillNDecks(numberOfDecks);
     super(cards);
-    shuffle();
+    super.shuffle();
   }
 
-  /**
-   * Gets the card at the top of the deck.
-   *
-   * @return the top card
-   */
-  @Override
-  public SuitlessCard dealCard() {
-    if (super.getDeckSize() == 0) {
-      throw new IllegalStateException("Cannot deal from empty deck");
-    }
-    SuitlessCard topCard = (SuitlessCard) super.cards.getFirst();
-    super.getDeck().removeFirst();
-    return topCard;
-  }
-
-  private static List<Card> fillOneDeck() {
-    ArrayList<Card> cardDeck = new ArrayList<>();
+  private static List<SuitlessCard> fillOneDeck() {
+    ArrayList<SuitlessCard> cardDeck = new ArrayList<>();
     int NUMBER_OF_SUITS = 4;
     for (int i = 0; i < NUMBER_OF_SUITS; i++) {
       for (Card.RANK rank : Card.RANK.values()) {
@@ -59,8 +44,8 @@ public class SuitlessDeck extends GameDeck {
     return cardDeck;
   }
 
-  private static List<Card> fillNDecks(int numberOfDecks) {
-    ArrayList<Card> cards = new ArrayList<>();
+  private static List<SuitlessCard> fillNDecks(int numberOfDecks) {
+    ArrayList<SuitlessCard> cards = new ArrayList<>();
     for (int i = 0; i < numberOfDecks; i++) {
       cards.addAll(fillOneDeck());
     }

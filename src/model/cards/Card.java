@@ -115,4 +115,12 @@ public interface Card extends Comparable<Card> {
    */
   @Override
   int hashCode();
+
+  /**
+   * Returns a string representation of the card, including its rank.
+   *
+   * @return a string representation of the card
+   */
+  @Override
+  String toString();
 }

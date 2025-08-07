@@ -1,0 +1,52 @@
+//        System.out.println(mspHelpers.calculateEV(new ArrayList<>(List.of(
+//            new SuitedCard(Card.RANK.KING, Card.SUIT.HEARTS),
+//            new SuitedCard(Card.RANK.TEN, Card.SUIT.SPADES),
+//            new SuitedCard(Card.RANK.SIX, Card.SUIT.SPADES),
+//            new SuitedCard(Card.RANK.FIVE, Card.SUIT.SPADES)
+//            )
+//        ), 1, 4));
+
+
+
+
+----------------------------------------------------------------------------------------------------
+
+
+
+  /*
+  public int solveHand(List<SuitedCard> cards, int ante, int amountWagered) {
+    if (cards.size() > 4 || cards.size() < 2) {
+      return -1;
+    }
+
+    return evaluateCards(cards, ante, amountWagered);
+  }
+  */
+
+
+----------------------------------------------------------------------------------------------------
+
+
+
+
+  /*
+  private void cacheMoves() {
+    try (BufferedWriter writer = new BufferedWriter(new FileWriter(cachedMovesFileName))) {
+
+      for (SuitedCard firstCard : masterDeck) {
+        for (SuitedCard secondCard : masterDeck) {
+          if (!firstCard.equals(secondCard)) {
+            String key = firstCard + "," + secondCard;
+            System.out.println("Processing: " + key);
+            int move = solveHand(new ArrayList<>(List.of(firstCard, secondCard)), 1, 1);
+            writer.write(key + "=" + move);
+            writer.newLine();
+            writer.flush();
+          }
+        }
+      }
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+  */

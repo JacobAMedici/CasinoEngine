@@ -7,18 +7,20 @@ import java.util.List;
 /**
  * A deck of cards that may or may not have a suit.
  */
-public abstract class GameDeck<T extends Card> implements Deck {
+public abstract class GameDeck<T extends Card> implements Deck<T> {
 
   protected final List<T> cards;
   private final static int CARDS_IN_DECK = 52;
+  private int runningCount = 0;
 
   /**
    * Constructor for GameDeck.
    *
    * @param cards the given cards.
    */
-  GameDeck(List<T> cards) {
+  public GameDeck(List<T> cards) {
     this.cards = cards;
+    runningCount = getNewRunningCount();
   }
 
   /**
@@ -57,15 +59,19 @@ public abstract class GameDeck<T extends Card> implements Deck {
    */
   @Override
   public int getRunningCount() {
-    int runningCount = 0;
+    return runningCount;
+  }
+
+  private int getNewRunningCount() {
+    int newRunningCount = 0;
     for (Card card : cards) {
       switch (card.rank()) {
-        case TWO, THREE, FOUR, FIVE, SIX -> runningCount++;
-        case TEN, JACK, QUEEN, KING, ACE -> runningCount--;
-        default -> runningCount += 0;
+        case TWO, THREE, FOUR, FIVE, SIX -> newRunningCount++;
+        case TEN, JACK, QUEEN, KING, ACE -> newRunningCount--;
+        default -> newRunningCount += 0;
       }
     }
-    return runningCount;
+    return newRunningCount;
   }
 
   /**
@@ -81,5 +87,41 @@ public abstract class GameDeck<T extends Card> implements Deck {
     return (int) Math.floor((double) runningCount / cardsLeft * CARDS_IN_DECK);
   }
 
-  public abstract Card dealCard();
+  /**
+   * Gets the card at the top of the deck.
+   *
+   * @return the top card
+   */
+  @Override
+  public T dealCard() {
+    if (cards.isEmpty()) {
+      throw new IllegalStateException("Cannot deal from empty deck");
+    }
+    T topCard = cards.getFirst();
+    adjustRunningCountOnRemovedCard(topCard);
+    cards.removeFirst();
+    return topCard;
+  }
+
+  /**
+   * Removes the specified cards from the deck.
+   *
+   * @param cardsToRemove the list of cards to remove
+   */
+  @Override
+  public void removeCardsFromDeck(List<T> cardsToRemove) {
+    for (T card : cardsToRemove) {
+      adjustRunningCountOnRemovedCard(card);
+      cards.remove(card);
+    }
+  }
+
+  private void adjustRunningCountOnRemovedCard(T topCard) {
+    switch (topCard.rank()) {
+      case TWO, THREE, FOUR, FIVE, SIX -> runningCount++;
+      case TEN, JACK, QUEEN, KING, ACE -> runningCount--;
+      default -> runningCount += 0;
+    }
+  }
+
 }

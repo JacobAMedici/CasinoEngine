@@ -1,38 +1,16 @@
 package model.games.twentyOne.blackjack.sideBets;
 
+/**
+ * Runs simulations for side bets in blackjack.
+ */
 public class runSideBets {
+  /**
+   * Main method to run simulations.
+   *
+   * @param ignored command line arguments (not used)
+   */
   public static void main(String[] ignored) {
-    System.out.println("Cut off percentage: 40");
-    MatchTheDealer matchTheDealerTwo = new MatchTheDealer(2, 4, 19, 2 * 52 * 45 / 100);
-    matchTheDealerTwo.printTheInfoHouseEdgePerTrueCount();
 
-    System.out.println("Cut off percentage: 35");
-    matchTheDealerTwo = new MatchTheDealer(2, 4, 19, 2 * 52 * 40 / 100);
-    matchTheDealerTwo.printTheInfoHouseEdgePerTrueCount();
-
-    System.out.println("Cut off percentage: 30");
-    matchTheDealerTwo = new MatchTheDealer(2, 4, 19, 2 * 52 * 35 / 100);
-    matchTheDealerTwo.printTheInfoHouseEdgePerTrueCount();
-
-    System.out.println("Cut off percentage: 25");
-    matchTheDealerTwo = new MatchTheDealer(2, 4, 19, 2 * 52 * 30 / 100);
-    matchTheDealerTwo.printTheInfoHouseEdgePerTrueCount();
-
-    /*
-    for (int cutOffPercentage = 5; cutOffPercentage <= 75; cutOffPercentage += 10) {
-      System.out.printf("Cut off percentage: %d", cutOffPercentage);
-      System.out.println();
-
-      MatchTheDealer matchTheDealerEight = new MatchTheDealer(8, 3, 14, 8 * 52 * cutOffPercentage / 100);
-      matchTheDealerEight.printTheInfoHouseEdgePerTrueCount();
-      MatchTheDealer matchTheDealerSix = new MatchTheDealer(6, 4, 11, 6 * 52 * cutOffPercentage / 100);
-      matchTheDealerSix.printTheInfoHouseEdgePerTrueCount();
-      MatchTheDealer matchTheDealerFour = new MatchTheDealer(4, 4, 12, 4 * 52 * cutOffPercentage / 100);
-      matchTheDealerFour.printTheInfoHouseEdgePerTrueCount();
-      MatchTheDealer matchTheDealerTwo = new MatchTheDealer(2, 4, 19, 2 * 52 * cutOffPercentage / 100);
-      matchTheDealerTwo.printTheInfoHouseEdgePerTrueCount();
-    }
-     */
   }
 }
 
@@ -77,4 +55,20 @@ Cut off percentage: 75
   Units won per hand (6 deck)  0.000000
   Units won per hand (4 deck)  0.000000
   Units won per hand (2 deck)  0.000001
+ */
+
+/*
+for (int cutOffPercentage = 5; cutOffPercentage <= 75; cutOffPercentage += 10) {
+  System.out.printf("Cut off percentage: %d", cutOffPercentage);
+  System.out.println();
+
+  MatchTheDealer matchTheDealerEight = new MatchTheDealer(8, 3, 14, 8 * 52 * cutOffPercentage / 100);
+  matchTheDealerEight.printTheInfoHouseEdgePerTrueCount();
+  MatchTheDealer matchTheDealerSix = new MatchTheDealer(6, 4, 11, 6 * 52 * cutOffPercentage / 100);
+  matchTheDealerSix.printTheInfoHouseEdgePerTrueCount();
+  MatchTheDealer matchTheDealerFour = new MatchTheDealer(4, 4, 12, 4 * 52 * cutOffPercentage / 100);
+  matchTheDealerFour.printTheInfoHouseEdgePerTrueCount();
+  MatchTheDealer matchTheDealerTwo = new MatchTheDealer(2, 4, 19, 2 * 52 * cutOffPercentage / 100);
+  matchTheDealerTwo.printTheInfoHouseEdgePerTrueCount();
+}
  */

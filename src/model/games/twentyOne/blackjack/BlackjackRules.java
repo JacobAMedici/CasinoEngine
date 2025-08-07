@@ -54,10 +54,6 @@ public class BlackjackRules implements Rules {
     this.holeCard = holeCard;
   }
 
-  // BJ-1.5_6D_75_3_DATC_DAS_RSA_S17_EARLY-S_American
-  // BJ-1.2_2D_50_4_DTE_NDAS_NRSA_H17_Late-S_American
-  // BJ-2.0_8D_100_3_DNTE_DAS_RSA_S17_No-S_European
-
   @Override
   public BigDecimal getBlackjackPayout() {
     return blackjackPayout;

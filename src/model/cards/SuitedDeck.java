@@ -6,16 +6,16 @@ import java.util.List;
 /**
  * A deck of cards (or n decks) where cards have a suit).
  */
-public class SuitedDeck extends GameDeck {
+public class SuitedDeck extends GameDeck<SuitedCard> {
 
   /**
    * Constructs a SuitedDeck containing one full set of cards (1 cards of each rank and suit).
    * Automatically shuffles the deck upon creation.
    */
   public SuitedDeck() {
-    List<Card> cards = fillOneDeck();
+    List<SuitedCard> cards = fillOneDeck();
     super(cards);
-    shuffle();
+    super.shuffle();
   }
 
   /**
@@ -25,38 +25,13 @@ public class SuitedDeck extends GameDeck {
    * @param numberOfDecks the number of standard decks to include
    */
   public SuitedDeck(int numberOfDecks) {
-    List<Card> cards = fillNDecks(numberOfDecks);
+    List<SuitedCard> cards = fillNDecks(numberOfDecks);
     super(cards);
-    shuffle();
+    super.shuffle();
   }
 
-  /**
-   * Constructs a SuitedDeck containing an old version of a deck.
-   *
-   * @param gameDeck an old version of a deck
-   */
-  public SuitedDeck(SuitedDeck gameDeck) {
-    super(gameDeck.getDeck());
-    shuffle();
-  }
-
-  /**
-   * Gets the card at the top of the deck.
-   *
-   * @return the top card
-   */
-  @Override
-  public SuitedCard dealCard() {
-    if (super.getDeckSize() == 0) {
-      throw new IllegalStateException("Cannot deal from empty deck");
-    }
-    SuitedCard topCard = (SuitedCard) super.cards.getFirst();
-    super.cards.removeFirst();
-    return topCard;
-  }
-
-  private static List<Card> fillOneDeck() {
-    ArrayList<Card> cardDeck = new ArrayList<>();
+  private static List<SuitedCard> fillOneDeck() {
+    ArrayList<SuitedCard> cardDeck = new ArrayList<>();
     for (Card.SUIT suit : Card.SUIT.values()) {
       for (Card.RANK rank : Card.RANK.values()) {
         cardDeck.add(new SuitedCard(rank, suit));
@@ -65,8 +40,8 @@ public class SuitedDeck extends GameDeck {
     return cardDeck;
   }
 
-  private static List<Card> fillNDecks(int numberOfDecks) {
-    ArrayList<Card> cards = new ArrayList<>();
+  private static List<SuitedCard> fillNDecks(int numberOfDecks) {
+    ArrayList<SuitedCard> cards = new ArrayList<>();
     for (int i = 0; i < numberOfDecks; i++) {
       cards.addAll(fillOneDeck());
     }

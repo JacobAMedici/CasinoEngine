@@ -64,6 +64,22 @@ public record SuitedCard(RANK rank, SUIT suit) implements Card, Comparable<Card>
     return false;
   }
 
+  /**
+   * Returns a hash code value for the card based on its rank and suit.
+   *
+   * @return a hash code value for this card
+   */
+  @Override
+  public int hashCode() {
+    return rank.hashCode() + suit.hashCode();
+  }
+
+  /**
+   * Returns a string representation of the card in the format "rank of suit".
+   *
+   * @return a string representation of the card
+   */
+  @Override
   public String toString() {
     return String.format("%s of %s", rank, suit).toLowerCase();
   }

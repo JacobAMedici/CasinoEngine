@@ -1,21 +1,16 @@
 package model.games.poker.mississippiStudPoker;
 
-
-import model.cards.Card;
-import model.cards.SuitedCard;
-
-import java.util.ArrayList;
-import java.util.List;
-
+/**
+ * Main class to run the Mississippi Stud Poker game logic.
+ */
 public class MSP_Game {
+    /**
+     * Main method to test the Mississippi Stud Poker game logic.
+     *
+     * @param ignored Command line arguments (not used).
+     */
     public static void main(String[] ignored) {
-        MSP_Helpers MSP_Helper = new MSP_Helpers();
-        System.out.println(MSP_Helper.calculateEV(new ArrayList<>(List.of(
-            new SuitedCard(Card.RANK.KING, Card.SUIT.HEARTS),
-            new SuitedCard(Card.RANK.QUEEN, Card.SUIT.SPADES),
-            new SuitedCard(Card.RANK.TWO, Card.SUIT.HEARTS),
-            new SuitedCard(Card.RANK.THREE, Card.SUIT.SPADES)
-            )
-        ), 1, 4));
+        MSP_Helpers mspHelpers = new MSP_Helpers();
+        System.out.println(mspHelpers.houseEdge());
     }
 }

@@ -1,0 +1,3 @@
+// https://rec.gambling.craps.narkive.com/rDIloqRe/how-different-odds-multiples-affect-standard-deviation
+// 10x odds, 1.410 SD as a function of betting units
+//    System.out.printf("Standard Deviation per hour: $%.2f betting units%n", 1.410 * 7_667 * 10);
